@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mobile Legends Win Rate Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Mobile Legends Calculators</title>
+    <style>
+        /* CSS styles for both calculators */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e90ff;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #fff;
+        }
+
+        input[type='number'] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #1de9b6;
+            border-radius: 5px;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #1de9b6;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0a7d68;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #fff;
+            text-align: center;
+        }
+
+        #probability, #winRate {
+            font-weight: bold;
+            color: #1de9b6;
+        }
+    </style>
 </head>
 <body>
-    <div class="background"></div>
     <div class="container">
-        <h1>Mobile Legends Win Rate Calculator</h1>
+        <h1>Magic Wheel Calculator</h1>
+        <label for="totalItems">Total Items in the Wheel:</label>
+        <input type="number" id="totalItems">
+        <label for="desiredItem">Desired Item Number:</label>
+        <input type="number" id="desiredItem">
+        <button onclick="calculateProbability()">Calculate Probability</button>
+        <p>Your chance of getting the desired item is: <span id="probability"></span></p>
+    </div>
+
+    <div class="container">
+        <h1>Win Rate Calculator</h1>
         <label for="totalMatches">Total Matches:</label>
         <input type="number" id="totalMatches">
         <label for="wins">Wins:</label>
@@ -16,6 +93,30 @@
         <p>Your Win Rate is: <span id="winRate"></span></p>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function calculateProbability() {
+            const totalItems = parseInt(document.getElementById('totalItems').value);
+            const desiredItem = parseInt(document.getElementById('desiredItem').value);
+
+            if (totalItems && desiredItem && desiredItem <= totalItems && desiredItem > 0) {
+                const probability = ((1 / totalItems) * 100).toFixed(2);
+                document.getElementById('probability').textContent = probability + '%';
+            } else {
+                alert("Please enter valid values for total items and desired item.");
+            }
+        }
+
+        function calculateWinRate() {
+            const totalMatches = parseInt(document.getElementById('totalMatches').value);
+            const wins = parseInt(document.getElementById('wins').value);
+
+            if (totalMatches && wins) {
+                const winRate = (wins / totalMatches) * 100;
+                document.getElementById('winRate').textContent = winRate.toFixed(2) + '%';
+            } else {
+                alert("Please enter valid values for total matches and wins.");
+            }
+        }
+    </script>
 </body>
 </html>
