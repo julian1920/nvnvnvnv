@@ -8,6 +8,7 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
+    color: #fff;
 }
 
 .background {
@@ -17,17 +18,68 @@ body {
     width: 100%;
     height: 100%;
     background: url('https://cms.disway.id/uploads/7dfcaead6cb80a9b399ee1300626294a.jpg') center/cover no-repeat;
-    filter: blur(5px);
+    filter: brightness(0.7) blur(3px);
     z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0a0a0a, #1e1e1e);
+    opacity: 0.9;
 }
 
 .container {
     max-width: 400px;
-    background-color: rgba(18, 18, 18, 0.8);
+    background-color: #333;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    position: relative;
 }
 
-/* Other styles from the cyber-themed design example */
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+input[type='number'] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #1de9b6;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1de9b6;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0a7d68;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#winRate {
+    font-weight: bold;
+}
