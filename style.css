@@ -1,6 +1,6 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,34 +11,36 @@ body {
 
 .container {
     max-width: 400px;
-    background-color: #fff;
-    border-radius: 8px;
+    background-color: #121212;
+    border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 h1 {
-    color: #1e90ff;
+    color: #1de9b6;
     text-align: center;
 }
 
 label {
     display: block;
     margin: 15px 0 5px;
-    color: #333;
+    color: #fff;
 }
 
 input[type='number'] {
     width: calc(100% - 20px);
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #1de9b6;
     border-radius: 5px;
+    background-color: #121212;
+    color: #fff;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #1e90ff;
-    color: white;
+    background-color: #1de9b6;
+    color: #121212;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -48,17 +50,17 @@ button {
 }
 
 button:hover {
-    background-color: #0d5aa7;
+    background-color: #0a7d68;
 }
 
 p {
     margin-top: 20px;
     font-size: 1.2em;
-    color: #555;
+    color: #fff;
     text-align: center;
 }
 
 #winRate {
     font-weight: bold;
-    color: #1e90ff;
+    color: #1de9b6;
 }
